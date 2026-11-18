@@ -1,0 +1,144 @@
+
+.sidebar {
+  width: 260px;
+  min-width: 260px;
+  min-height: calc(100vh - 76px);
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  padding: 25px 16px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 10px 30px;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.sidebar-brand-icon {
+  color: #5145e9;
+}
+
+.sidebar-brand h2 {
+  font-size: 19px;
+  color: #5145e9;
+  margin: 0;
+}
+
+.sidebar-brand p {
+  font-size: 12px;
+  color: #718096;
+  margin: 4px 0 0;
+}
+
+.sidebar-menu {
+  margin-top: 28px;
+}
+
+.menu-heading {
+  font-size: 11px;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 1px;
+  padding: 0 12px;
+  margin: 12px 0;
+}
+
+.sidebar-link {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  margin: 4px 0;
+  border: none;
+  border-radius: 9px;
+  background: transparent;
+  color: #475569;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background: #f1f0ff;
+  color: #5145e9;
+}
+
+.sidebar-link.active {
+  background: #eeedff;
+  color: #5145e9;
+  font-weight: 600;
+}
+
+.student-menu-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 12px;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.student-menu-heading svg:last-child {
+  margin-left: auto;
+}
+
+.student-submenu {
+  padding-left: 8px;
+}
+
+.preferences-heading {
+  margin-top: 30px;
+}
+
+.sidebar-footer {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: auto;
+  padding: 20px 10px 5px;
+  border-top: 1px solid #edf0f5;
+  color: #64748b;
+  font-size: 12px;
+}
+
+/* Dark mode */
+.dark .sidebar {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.dark .sidebar-brand {
+  border-color: #334155;
+}
+
+.dark .sidebar-brand p,
+.dark .sidebar-footer,
+.dark .menu-heading {
+  color: #94a3b8;
+}
+
+.dark .student-menu-heading {
+  color: #e2e8f0;
+}
+
+.dark .sidebar-link {
+  color: #cbd5e1;
+}
+
+.dark .sidebar-link:hover,
+.dark .sidebar-link.active {
+  background: #34315f;
+  color: #a5a0ff;
+}
+
+.dark .sidebar-footer {
+  border-color: #334155;
+}

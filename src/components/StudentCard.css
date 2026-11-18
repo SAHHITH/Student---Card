@@ -1,0 +1,260 @@
+
+/* Student ID Card */
+
+.student-id-card {
+  width: 100%;
+  max-width: 650px;
+  min-height: 290px;
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.student-id-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.14);
+}
+
+/* Header */
+
+.id-card-header {
+  min-height: 115px;
+  padding: 22px 28px;
+  background: linear-gradient(
+    120deg,
+    #10b981,
+    #075985,
+    #0891b2
+  );
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.college-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-icon {
+  font-size: 30px;
+}
+
+.college-brand h4 {
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+
+.college-brand p {
+  font-size: 11px;
+  opacity: 0.9;
+}
+
+.id-card-header h1 {
+  font-size: 30px;
+  line-height: 1.05;
+  text-align: right;
+  letter-spacing: 1px;
+  font-weight: 800;
+}
+
+/* Body */
+
+.id-card-body {
+  padding: 22px 28px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  background:
+    radial-gradient(circle at bottom left, #ecfeff, transparent 55%),
+    #ffffff;
+}
+
+.id-photo-section {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.id-student-photo,
+.id-photo-placeholder {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #d1fae5;
+  background: #ecfdf5;
+}
+
+.id-photo-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #075985;
+}
+
+/* Status */
+
+.id-status {
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.id-status.active {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.id-status.inactive {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* Student Details */
+
+.id-student-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.id-student-info h2 {
+  color: #0f172a;
+  font-size: 23px;
+  margin-bottom: 12px;
+}
+
+.id-student-info p {
+  display: flex;
+  gap: 8px;
+  margin: 8px 0;
+  font-size: 13px;
+  color: #475569;
+  flex-wrap: wrap;
+}
+
+.id-student-info strong {
+  color: #1e293b;
+  min-width: 115px;
+}
+
+.id-student-info span {
+  overflow-wrap: anywhere;
+}
+
+/* Footer */
+
+.id-card-footer {
+  padding: 12px 28px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.barcode {
+  width: 145px;
+  height: 38px;
+  background: repeating-linear-gradient(
+    90deg,
+    #111827 0px,
+    #111827 2px,
+    white 2px,
+    white 4px,
+    #111827 4px,
+    #111827 7px,
+    white 7px,
+    white 9px
+  );
+  position: relative;
+}
+
+.barcode span {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-size: 9px;
+  color: #64748b;
+  letter-spacing: 1px;
+}
+
+.id-card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.id-card-actions button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 13px;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.id-view-btn {
+  background: #e0e7ff;
+  color: #4338ca;
+}
+
+.id-delete-btn {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.id-card-actions button:hover {
+  opacity: 0.8;
+}
+
+/* Responsive */
+
+@media (max-width: 550px) {
+  .id-card-header {
+    padding: 18px;
+  }
+
+  .id-card-header h1 {
+    font-size: 22px;
+  }
+
+  .id-card-body {
+    padding: 18px;
+    gap: 15px;
+  }
+
+  .id-student-photo,
+  .id-photo-placeholder {
+    width: 90px;
+    height: 90px;
+  }
+
+  .id-student-info h2 {
+    font-size: 18px;
+  }
+
+  .id-student-info p {
+    font-size: 11px;
+  }
+
+  .id-student-info strong {
+    min-width: 95px;
+  }
+
+  .id-card-footer {
+    padding: 12px 18px 20px;
+    flex-wrap: wrap;
+  }
+}
