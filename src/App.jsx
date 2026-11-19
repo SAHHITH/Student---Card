@@ -25,7 +25,20 @@ function App() {
   // Student data
   const [students, setStudents] = useState(() => {
     const saved = localStorage.getItem("students");
-    return saved ? JSON.parse(saved) : initialStudents;
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        return parsed.map((student) => ({
+          age: 20,
+          bloodGroup: "O+",
+          phone: "+91 98765 43210",
+          ...student,
+        }));
+      } catch {
+        return initialStudents;
+      }
+    }
+    return initialStudents;
   });
 
   // Application states

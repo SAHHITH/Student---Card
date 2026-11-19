@@ -884,9 +884,20 @@
   margin-bottom: 22px;
 }
 
+.details-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.details-header-icon {
+  color: #5145e5;
+}
+
 .details-header h2 {
   font-size: 21px;
   font-weight: 700;
+  margin: 0;
 }
 
 .details-close {
@@ -899,6 +910,7 @@
   border-radius: 9px;
   background: #f1f5f9;
   color: #475569;
+  cursor: pointer;
 }
 
 .details-close:hover {
@@ -915,9 +927,25 @@
 }
 
 .details-avatar {
-  width: 105px;
-  height: 105px;
-  margin-bottom: 14px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #ecfdf5;
+  color: #075985;
+  border: 3.5px solid #d1fae5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0 auto 12px auto;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.2);
+  flex-shrink: 0;
+}
+
+.details-student-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .details-profile h2 {
@@ -935,24 +963,44 @@
 .details-information {
   display: flex;
   flex-direction: column;
-  gap: 17px;
-  padding: 23px 0;
+  gap: 12px;
+  padding: 16px 0;
 }
 
 .details-row {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .details-row > svg {
-  width: 40px;
-  height: 40px;
-  padding: 10px;
-  border-radius: 10px;
+  width: 38px;
+  height: 38px;
+  padding: 9px;
+  border-radius: 9px;
   background: #eef0ff;
   color: #5145e5;
   flex-shrink: 0;
+}
+
+.details-row.sem-row > svg {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.details-row.cgpa-row > svg {
+  background: #ede9fe;
+  color: #7c3aed;
+}
+
+.details-row.blood-row > svg {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.details-row.phone-row > svg {
+  background: #dcfce7;
+  color: #16a34a;
 }
 
 .details-row div {
@@ -1050,6 +1098,37 @@
 .dark .details-close {
   background: #334155;
   color: #f8fafc;
+}
+
+.dark .details-avatar {
+  background: #ecfdf5;
+  border-color: #d1fae5;
+  color: #075985;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
+}
+
+.dark .details-header-icon {
+  color: #818cf8;
+}
+
+.dark .details-row.sem-row > svg {
+  background: #451a03;
+  color: #fbbf24;
+}
+
+.dark .details-row.cgpa-row > svg {
+  background: #3b0764;
+  color: #c084fc;
+}
+
+.dark .details-row.blood-row > svg {
+  background: #451a1a;
+  color: #f87171;
+}
+
+.dark .details-row.phone-row > svg {
+  background: #14532d;
+  color: #4ade80;
 }
 
 

@@ -35,7 +35,7 @@ function StudentCard({ student, onView, onDelete }) {
             />
           ) : (
             <div className="id-photo-placeholder">
-              <UserRound size={75} />
+              <UserRound size={36} strokeWidth={1.8} />
             </div>
           )}
 
@@ -67,13 +67,13 @@ function StudentCard({ student, onView, onDelete }) {
           </p>
 
           <p>
-            <strong>Semester:</strong>
-            <span>{student.semester}</span>
+            <strong>Age:</strong>
+            <span>{student.age || 20} Years</span>
           </p>
 
           <p>
-            <strong>CGPA:</strong>
-            <span>{student.cgpa}</span>
+            <strong>Phone No:</strong>
+            <span>{student.phone || "+91 98765 43210"}</span>
           </p>
         </div>
       </div>

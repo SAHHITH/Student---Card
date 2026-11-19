@@ -1,14 +1,16 @@
-
 import { useState } from "react";
 import { X } from "lucide-react";
 
 function StudentForm({ student, onAdd, onUpdate, onClose }) {
   const [formData, setFormData] = useState(() => student || {
     name: "",
+    age: "",
     registerNumber: "",
     department: "AIML",
     year: "3rd Year",
     semester: "5",
+    bloodGroup: "O+",
+    phone: "",
     email: "",
     cgpa: "",
     attendance: "",
@@ -30,8 +32,11 @@ function StudentForm({ student, onAdd, onUpdate, onClose }) {
     const savedStudent = {
       ...formData,
       id: student?.id ?? Date.now(),
-      cgpa: Number(formData.cgpa),
-      attendance: Number(formData.attendance),
+      age: formData.age ? Number(formData.age) : 20,
+      bloodGroup: formData.bloodGroup || "O+",
+      phone: formData.phone || "+91 98765 43210",
+      cgpa: Number(formData.cgpa) || 0,
+      attendance: Number(formData.attendance) || 0,
     };
 
     if (student) {
@@ -66,9 +71,23 @@ function StudentForm({ student, onAdd, onUpdate, onClose }) {
               <label>Student Name</label>
               <input
                 name="name"
-                value={formData.name}
+                value={formData.name || ""}
                 onChange={handleChange}
                 placeholder="Enter student name"
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label>Age</label>
+              <input
+                type="number"
+                name="age"
+                value={formData.age || ""}
+                onChange={handleChange}
+                placeholder="Enter age (e.g. 20)"
+                min="15"
+                max="60"
                 required
               />
             </div>
@@ -77,7 +96,7 @@ function StudentForm({ student, onAdd, onUpdate, onClose }) {
               <label>Register Number</label>
               <input
                 name="registerNumber"
-                value={formData.registerNumber}
+                value={formData.registerNumber || ""}
                 onChange={handleChange}
                 placeholder="Enter register number"
                 required
@@ -106,6 +125,32 @@ function StudentForm({ student, onAdd, onUpdate, onClose }) {
             </div>
 
             <div className="form-group">
+              <label>Blood Group</label>
+              <select name="bloodGroup" value={formData.bloodGroup || "O+"} onChange={handleChange}>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+              </select>
+            </div>
+
+            <div className="form-group">
+              <label>Phone Number</label>
+              <input
+                type="tel"
+                name="phone"
+                value={formData.phone || ""}
+                onChange={handleChange}
+                placeholder="+91 98765 43210"
+                required
+              />
+            </div>
+
+            <div className="form-group">
               <label>Semester</label>
               <select name="semester" value={formData.semester} onChange={handleChange}>
                 {[1, 2, 3, 4, 5, 6, 7, 8].map((sem) => (
@@ -119,7 +164,7 @@ function StudentForm({ student, onAdd, onUpdate, onClose }) {
               <input
                 type="email"
                 name="email"
-                value={formData.email}
+                value={formData.email || ""}
                 onChange={handleChange}
                 placeholder="Enter email"
                 required
@@ -131,7 +176,7 @@ function StudentForm({ student, onAdd, onUpdate, onClose }) {
               <input
                 type="number"
                 name="cgpa"
-                value={formData.cgpa}
+                value={formData.cgpa || ""}
                 onChange={handleChange}
                 placeholder="Enter CGPA"
                 min="0"
@@ -146,7 +191,7 @@ function StudentForm({ student, onAdd, onUpdate, onClose }) {
               <input
                 type="number"
                 name="attendance"
-                value={formData.attendance}
+                value={formData.attendance || ""}
                 onChange={handleChange}
                 placeholder="Enter attendance"
                 min="0"

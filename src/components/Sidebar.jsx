@@ -6,7 +6,6 @@ import {
   GraduationCap,
   UserCheck,
   Users,
-  Settings,
   ChevronDown,
 } from "lucide-react";
 
@@ -38,20 +37,7 @@ function Sidebar({ activeView, onNavigate }) {
 
   return (
     <aside className="sidebar">
-
-      <div className="sidebar-brand">
-        <div className="sidebar-brand-icon">
-          <GraduationCap size={27} />
-        </div>
-
-        <div>
-          <h2>StudentHub</h2>
-          <p>Student Management System</p>
-        </div>
-      </div>
-
       <div className="sidebar-menu">
-
         <p className="menu-heading">MAIN MENU</p>
 
         <button
@@ -96,21 +82,6 @@ function Sidebar({ activeView, onNavigate }) {
           ))}
 
         </div>
-
-        <p className="menu-heading preferences-heading">
-          PREFERENCES
-        </p>
-
-        <button
-          className={`sidebar-link ${
-            activeView === "settings" ? "active" : ""
-          }`}
-          onClick={() => onNavigate("settings")}
-        >
-          <Settings size={19} />
-          <span>Settings</span>
-        </button>
-
       </div>
 
       <div className="sidebar-footer">
